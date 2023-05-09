@@ -65,8 +65,22 @@ const vehicles = [
     }
   ];
 
-  for(let i=0; i<vehicles[i].length; i++) {
-    if(vehicles[i].color == "Red") {
-        console.log(vehicles[i].type + " " + "is red");
+  for(let i=0; i<vehicles.length; i++) {
+    if(vehicles[i].color == 'Red') {
+        console.log("The color of" + " " + vehicles[i].type + " " + "is red");
+    }
+    let day = new Date();
+    if(vehicles[i].registrationExpires < day) {
+        console.log("The car with" + " " + vehicles[i].licenseNo + " " + "is expired");
+    }
+    if(vehicles[i].capacity >= 6) {
+        console.log("Vehicle with license number" + " " + vehicles[i].licenseNo + " " + "holds more than 6 people");
+    }
+    const v = vehicles[i];
+    const substr = v.licenseNo.slice(-3);
+    if(substr == '222') {
+        console.log("Vehicle with license number" + " " + vehicles[i].licenseNo + " " + "ends with 222");
     }
   }
+  
+
